@@ -11,11 +11,12 @@
     </div>
     <h3 align="center">on this honour I would like to entertain your addictions</h3>
     <div style="text-align: center; margin-top: 25px; font-family: sans-serif;">
+        
         <label for="addictionSelect" style="font-size: 22px; font-weight: bold; display: block; margin-bottom: 15px;">
           Choose your addiction:
         </label>
-        <form onsubmit="this.action=document.getElementById('addictionSelect').value;" target="_blank">
-        <select id="addictionSelect" required style="font-size: 18px; padding: 10px 15px; border-radius: 8px; border: 2px solid #333; cursor: pointer; background-color: white;">
+
+        <select id="addictionSelect" style="font-size: 18px; padding: 10px 15px; border-radius: 8px; border: 2px solid #333; cursor: pointer; background-color: white;">
             <option value="" disabled selected>-- Select a Website --</option>
             <option value="https://www.whatsapp.com">Whatsapp</option>
             <option value="https://www.youtube.com">YouTube</option>
@@ -23,9 +24,22 @@
             <option value="https://www.netflix.com">Netflix</option>
         </select>
 
-        <button type="submit" style="font-size: 18px; padding: 10px 20px; margin-left: 10px; border-radius: 8px; border: none; background-color: #333; color: white; font-weight: bold; cursor: pointer;">
+        <button type="button" onclick="goToWebsite()" style="font-size: 18px; padding: 10px 20px; margin-left: 10px; border-radius: 8px; border: none; background-color: #333; color: white; font-weight: bold; cursor: pointer;">
             Go!
         </button>
+
+    </div>
+
+    <script>
+        function goToWebsite() {
+            var url = document.getElementById('addictionSelect').value;
+            if (url) {
+                window.open(url, '_blank');
+            } else {
+                alert("Please select a website first!");
+            }
+        }
+    </script>
 
     </form>
 
